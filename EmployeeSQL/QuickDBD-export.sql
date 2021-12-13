@@ -1,5 +1,4 @@
-﻿
--- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/UO08Bi
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
@@ -14,13 +13,13 @@ CREATE TABLE "departments" (
 
 select * from departments
 
+
 CREATE TABLE "dept_emp" (
     "emp_no" int   NOT NULL,
-    "dept_no" varchar   NOT NULL
-);
-
+    "dept_no" varchar   NOT NULL,
+	
 select * from dept_emp
-
+	
 CREATE TABLE "dept_manager" (
     "dept_no" varchar   NOT NULL,
     "emp_no" int   NOT NULL
@@ -41,7 +40,7 @@ CREATE TABLE "employees" (
      )
 );
 
-select * from dept_manager
+select * from employees 
 
 CREATE TABLE "salaries" (
     "emp_no" int   NOT NULL,
@@ -60,6 +59,8 @@ CREATE TABLE "titles" (
 
 select * from titles
 
+
+
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
@@ -77,4 +78,3 @@ REFERENCES "titles" ("title_id");
 
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
-
