@@ -85,6 +85,12 @@ REFERENCES "employees" ("emp_no");
 --------------------------------------------------------------------------------------------
 	
 --1. List the following details of each employee: employee number, last name, first name, sex, and salary.
-select employees.emp_no as  employee_number, employees.last_name, employees.first_name, employees.sex, salaries.salary
+-- select employees.emp_no as  employee_number, employees.last_name, employees.first_name, employees.sex, salaries.salary
+-- FROM employees
+-- join salaries on employees.emp_no = salaries.emp_no
+	
+	
+--2. List first name, last name, and hire date for em;loyees who wer hired in 1986
+SELECT employees.first_name, employees.last_name, employees.hire_date
 FROM employees
-join salaries on employees.emp_no = salaries.emp_no
+WHERE extract(year from hire_date)= '1986'
