@@ -90,7 +90,36 @@ REFERENCES "employees" ("emp_no");
 -- join salaries on employees.emp_no = salaries.emp_no
 	
 	
---2. List first name, last name, and hire date for em;loyees who wer hired in 1986
-SELECT employees.first_name, employees.last_name, employees.hire_date
-FROM employees
-WHERE extract(year from hire_date)= '1986'
+--2. List first name, last name, and hire date for employees who wer hired in 1986
+-- SELECT employees.first_name, employees.last_name, employees.hire_date
+-- FROM employees
+-- WHERE extract(year from hire_date)= '1986'
+	
+	
+--3. List the manager of each department with the following information: employee number, last name, first name, and department name
+-- SELECT dept_manager.dept_no, departments.dept_name, dept_manager.emp_no,employees.last_name, employees.first_name
+-- FROM dept_manager
+-- JOIN departments
+-- ON dept_manager.dept_no = departments.dept_no
+-- JOIN employees
+-- ON dept_manager.emp_no = employees.emp_no;
+	
+-- 4. List the department of each employee with the followig information: employee number, last name, first name, and department name
+-- SELECT departments.dept_name, employees.last_name, employees.first_name, employees.emp_no
+-- FROM dept_emp
+-- JOIN departments
+-- ON dept_emp.dept_no = departments.dept_no
+-- JOIN employees
+-- ON dept_emp.emp_no = employees.emp_no
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
